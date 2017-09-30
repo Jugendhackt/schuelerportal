@@ -32,8 +32,8 @@ function anmeldungSenden() {
 
 //Response verarbeiten
 function anmeldungResponse(responseJson){
-    if(responseJson.userID==""){
-        document.getElementById('errMsg').innerHTML = "Ungueltige Anmeldung";
+    if(responseJson.err){
+        document.getElementById('errMsg').innerHTML = "Anmeldung fehlgeschlagen";
         console.log("Anmeldung fehlgeschlagen");
     } else {
         localStorage.setItem("userInfo", JSON.stringify(responseJson));
