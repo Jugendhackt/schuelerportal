@@ -13,7 +13,17 @@ Inhalt  = form.getvalue('chat')
 hausaufgabendatei = "other/Hausaufgaben.txt"
 chatdatei = "other/Chat.txt"
 username = "Gast"
+
 ip = cgi.escape(os.environ["REMOTE_ADDR"])
+
+if ip == "192.168.9.90":
+	username = "Anton"
+if ip == "192.168.9.177":
+	username = "Kira"
+if ip == "192.168.9.147":
+	username = "Lena"
+if ip == "192.168.9.134":
+	username = "Julia"
 print "Content-type:text/html\r\n\r\n"
 print "<html xmlns=\"http://www.w3.org/TR/html5/\">"
 print "<head>"

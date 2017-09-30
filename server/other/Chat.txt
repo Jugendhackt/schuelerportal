@@ -1,9 +1,3 @@
-Gast: Hi
-Gast: Hallo Welt
-Gast: Hi
-Gast: Hallo
-Gast: Hallo
-Gast: Hallo
-Gast: hey
-Gast: Huhu
-Gast: Hallo Jens
+Julia: Hello
+Lena: Hallo Julia
+Julia: Hallo Lena
