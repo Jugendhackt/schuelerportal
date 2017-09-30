@@ -1,3 +1,5 @@
+
+$(document).ready(function() {
 var $star_rating = $('.star-rating .fa');
 
 var SetRatingStar = function() {
@@ -16,6 +18,4 @@ $star_rating.on('click', function() {
 });
 
 SetRatingStar();
-$(document).ready(function() {
-
 });
