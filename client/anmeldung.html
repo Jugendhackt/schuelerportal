@@ -2,35 +2,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+        <title>2cuhl4skuel</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="menu.css" rel="stylesheet">
-    <script type="text/javascript" src="anmeldung.js"></script>
-  </head>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
 
-  <body>
+        <!--Custom CSS-->
+        <link href="menu.css" rel="stylesheet">
+        
+        <!--Include JavaScript-->
+        <script src="anmeldung.js"></script>
+    </head>
 
-    <ul class="topnav">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="account.html">Mein Account</a></li>
-      <li><a href="faecher.html">Fächer</a></li>
-      <li><a href="download.html">Download</a></li>
-      <li><a href="chat.html">Chatten</a></li>
-      <li class="right"><form class="" action="suchergebnisse.html" method="post">
-        <input type="search" name="search"  class="search-input" value=""><button type="button" class="search" >Suchen</button>
-      </form></li>
-    </ul>
+    <body>
+
+        <ul class="topnav">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="account.html">Mein Account</a></li>
+            <li><a href="faecher.html">Fächer</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="chat.html">Chatten</a></li>
+            <li class="right">
+                <form class="" action="suchergebnisse.html" method="post">
+                    <input type="search" name="search"  class="search-input" value="">
+                    <button type="button" class="search" >Suchen</button>
+                </form>
+            </li>
+        </ul>
     
-      <div class="container">
+        <div class="container">
           <h1>Anmeldung</h1>
           <form name="anmeldungForm" onsubmit="return anmeldungSenden()" method="post">
                 <label>Username:</label>
@@ -42,7 +49,9 @@
                 <button class="btn" type="submit">Login</button>
                 <p id="errMsg"></p>
             </form>
-        </div> 
-      
+        </div>
+        
+        <!--JS Funktionen ausfuehren-->
+        <script>checkAngemeldet();</script>
     </body>
 </html>
