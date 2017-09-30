@@ -7,8 +7,8 @@ function faecherLoad(){
         method: 'get'
     }).then(function(response) {
         return response.json();
-    })then(function(json){
-        faecherliste = json.toArray();
+    }).then(function(json){
+        faecherliste = json;
         console.log("Faecher: ", faecherliste);
         faecherAnzeigen(faecherliste);
     }).catch(function(err) {
