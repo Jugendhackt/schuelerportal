@@ -1,0 +1,36 @@
+body {
+display: block;
+margin: 0;
+}
+
+.menuoff {
+     display: none;
+}
+.menuon {
+    display: none;
+}
+
+@media screen and (max-width: 1000px){
+	.test {
+		display: none;
+	}
+    .menuoff {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+	.test {
+		display: none;
+
+	}
+    .menuoff {
+        display: none;
+    }
+    .menuon {
+        display: block;
+         right: 0px;
+
+
+}
