@@ -1,17 +1,25 @@
 const app = require('express')();
-
+const bodyParser = require('body-parser');
 const UserRoute = require('./routes/user');
 
 // use json everywhere
 app.use((req, res, next) => {
-    res.type('json');
+    res
+        .header('Access-Control-Allow-Origin', '*')
+        .header('Access-Control-Allow-Methods', '*')
+        .header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
-app.get('/', (req, res) => {
-    res.end(JSON.stringify({
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.all('/', (req, res) => {
+
+    res.json({
         'test': true
-    }));
+    });
+    res.end();
 });
 
 app.use('/user', UserRoute);
