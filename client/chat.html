@@ -6,21 +6,39 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
+     <script src="filter.js"></script>
+          <script src="anmeldung.js"></script>
+          <script src="suchanzeige.js"></script>
 
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
-	<script src="menu.js"></script>
+	<!--<script src="menu.js"></script>-->
 
 
     <link href="menu.css" rel="stylesheet">
   </head>
 
-  <body onload="menu('menu','Chatten')">
+<!--  <body onload="menu('menu','Chatten')">
     <div id="menu">
 
-    </div>
+    </div>-->
+    <ul class="topnav">
+      <li><a  href="index.html">Home</a></li>
+      <li><a href="account.html">Mein Account</a></li>
+      <li><a href="faecher.html">Fächer</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a class="active" href="chat.html">Chatten</a></li>
+        <li class="right">
+            <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+        </li>
+      <li class="right">
+        <form onsubmit="return suchRequestSimple()" method="post" name="suchFeldOben">
+            <input type="search"  class="search-input" name="suchText" value=""><button class="search" name="button" type="submit">Suchen</button>
+      </form>
+        </li>
+    </ul>
 </br>
     <div class="container">
 
@@ -44,5 +62,6 @@
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>isAngemeldet()</script>
   </body>
 </html>
