@@ -10,14 +10,18 @@ function anmeldungSenden() {
     
     var jsonObj = JSON.stringify(obj);
     
+    //Daten senden
     fetch(ip, {
         method: 'post',
         body: jsonObj,
         headers: new Headers({
 		'Content-Type': 'application/json'
-	})
+	   })
     }).then(function(response) {
-	   console.log("response: " + response);
+        return response.json();
+    }).then(function(json){
+        console.log("json: ", json);
+        anmeldungResponse(json);
     }).catch(function(err) {
 	   console.log("there was an error" + err);
     });
@@ -26,6 +30,14 @@ function anmeldungSenden() {
     return false;
 }
 
-function anmeldungResponse(response){
-    
+//Response verarbeiten
+function anmeldungResponse(responseJson){
+    if(responseJson.userID==""){
+        document.getElementById('errMsg').innerHTML = "Ungueltige Anmeldung";
+        console.log("Anmeldung fehlgeschlagen");
+    } else {
+        localStorage.setItem("userInfo", JSON.stringify(responseJson));
+        console.log("Anmeldung erfolgreich");
+        window.location = window.location.hostname + "/account.html";
+    }
 }

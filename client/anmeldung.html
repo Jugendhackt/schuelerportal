@@ -8,6 +8,7 @@
     <body>
         <button onclick="document.getElementById('anmeldung').style.display='block'">Login</button>
         
+        <!--Anmeldungsformular-->
         <div id="anmeldung" class="modal">
             <span onclick="document.getElementById('anmeldung').style.display='none'" 
 class="close" title="Close Modal">&times;</span>
@@ -21,6 +22,7 @@ class="close" title="Close Modal">&times;</span>
                     <input type="text" name="passwort">
 
                     <button type="submit">Login</button>
+                    <p id="errMsg"></p>
                 </div>    
             </form>
         </div>
