@@ -44,19 +44,18 @@ function anmeldungResponse(responseJson){
 
 function isAngemeldet(){
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if(userInfo == undefined){
-        document.getElementById('abmelden').style.display = "hidden";
+    if(userInfo == undefined || userInfo == null){
+        console.log("nicht angemeldet");
+        document.getElementById('abmelden').style.visibility = "hidden";
         return false;
-        
     } else {
         return true;
     }
 }
 function checkAngemeldet(){
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    console.log(userInfo);
     console.log("Checking angemeldet");
-    if(isAngemeldet()){
+    if(!isAngemeldet()){
         window.location = "anmeldung.html";
         return false;
     }else {
@@ -68,5 +67,6 @@ function checkAngemeldet(){
 function abmelden(){
     localStorage.removeItem('userInfo');
     console.log("abgemeldet");
-    document.getElementById('abmelden').style.display = "hidden";
+    document.getElementById('abmelden').display.visibility = "hidden";
+    
 }
