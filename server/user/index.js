@@ -9,6 +9,14 @@ class User {
         this.className = data.class;
     }
 
+    getJSONDecoration() {
+        return {
+            userID: this.userID,
+            username: this.username,
+            schoolName: this.schoolName,
+            className: this.className
+        }
+    }
 
     /** @returns {Promise<User>} */
     static getUserByUsername(username) {

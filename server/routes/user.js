@@ -2,6 +2,7 @@ const router = require('express').Router();
 const db = require('../database/db');
 const bcrypt = require('bcrypt');
 const UserUtil = require('../util/user/index');
+const User = require('../user/index');
 
 router.get('/test', (req, res) => {
     res.end(JSON.stringify({
@@ -29,10 +30,11 @@ router.post('/login', (req, res) => {
             throw new Error('User does not exist');
         }
     }).then(() => {
-        return User.getByUsername(username);
+        return User.getUserByUsername(username);
     }).then(user => {
-        res.json(user);
+        res.json(user.getJSONDecoration());
         res.end();
+        return;
     })
     .catch(err => {
         res.json({

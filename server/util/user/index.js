@@ -17,7 +17,7 @@ class User {
 
                     con.release();
 
-                    res(results.count === 0);
+                    res(results.count !== 0);
                 });
             });
         });
