@@ -27,6 +27,7 @@ tabs=  ["Home","Hausaufgaben","Stundenplan","Chat","Einstellungen"]
 #menu.printmenu(tab)
 print "<body>"
 print """
+<script src="../js/chat.js"></script>
 <div class="content">
 """
 
