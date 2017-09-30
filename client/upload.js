@@ -9,25 +9,36 @@ function uploadRequest(){
     uploadObj.teacher = document.forms["uploadForm"]["lehrer"].value;
     uploadObj.type = document.forms["uploadForm"]["type"].value;
     uploadObj.notes = document.forms["uploadForm"]["notizen"].value;
-    uploadObj.class = userInfo.class;
+    uploadObj.class = userInfo.className;
     uploadObj.userID = userInfo.userID;
     
+    
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var dataURL = reader.result;
+        uploadObj.file = dataURL;
+        console.log(dataURL);
+        //Daten senden
+        fetch(url, {
+            method: 'post',
+            body: JSON.stringify(uploadObj),
+            headers: new Headers({
+            'Content-Type': 'application/json'
+           })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(json){
+            console.log("json: ", json);
+            uploadResponse(json);
+        }).catch(function(err) {
+           console.log("there was an error" + err);
+        });
+    }
+
+    reader.readAsDataURL(document.forms["uploadForm"]["datei"].files[0]);
+    
     console.log(uploadObj);
-    //Daten senden
-    fetch(url, {
-        method: 'post',
-        body: JSON.stringify(uploadObj),
-        headers: new Headers({
-		'Content-Type': 'application/json'
-	   })
-    }).then(function(response) {
-        return response.json();
-    }).then(function(json){
-        console.log("json: ", json);
-        uploadResponse(json);
-    }).catch(function(err) {
-	   console.log("there was an error" + err);
-    });
+    
     
     return false;
     
