@@ -40,9 +40,8 @@ function suchRequest(){
 }
 
 function suchResponse(json){
-    
+    suchAnzeige(json);
 }
-
 function fillOutFilter(){
     userInfo = JSON.parse(localStorage.getItem('userInfo'));
     lastSuchRequest = JSON.parse(localStorage.getItem('lastSearch'));
