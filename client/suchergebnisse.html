@@ -44,27 +44,43 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" name="suchFeldOben">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="suchText">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onsubmit="suchRequestSimple">Search</button>
         </form>
       </div>
     </nav>
 
     <div class="container">
 
+        <div id="filter">
+            <h1>Filter</h1>
+            <form name="suchFilter" onsubmit="suchRequest">
+                Schlagwörter: <input type="text" name="suchText"><br>
+                Klasse: <input type="number" name="class" min="1" max="13">
+                Fach:  <select name="faecher">
+                      <option value="fach1">Fach1</option>
+                </select> 
+                <br>
+                Lehrer: <input type="text" name="lehrer"><br>
+                Datum: <input type="date" name="datum"><br>
+                Typ: <input type="checkbox" name="type1" value="hausaufgaben">Hausaufgaben<br>
+                <input type="checkbox" name="type2" value="notizen">Notizen und Aufschriebe<br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
       <div class="starter-template col text-left">
         <h1>Ergebnisse</h1>
-	<a href="#">Titel</a>
-	<p>Schulklasse</p>
-	<p>Typ</p>
-	<p>Beispielbild</p>
-	<p>Text</p>
-	<a href="#">Titel</a>
-	<p>Schulklasse</p>
-	<p>Typ</p>
-	<p>Beispielbild</p>
-	<p>Text</p>
+        <a href="#">Titel</a>
+        <p>Schulklasse</p>
+        <p>Typ</p>
+        <p>Beispielbild</p>
+        <p>Text</p>
+        <a href="#">Titel</a>
+        <p>Schulklasse</p>
+        <p>Typ</p>
+        <p>Beispielbild</p>
+        <p>Text</p>
 	
 
       </div>
