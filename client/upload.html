@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="menu.css" rel="stylesheet">
+      <script src="upload.js"></script>
   </head>
 
   <body>
@@ -31,17 +32,18 @@
     
       <div class="container">
         <h1>Aufschriebe hochladen</h1>
-        <form name="uploadForm" enctype="multipart/form-data">
+        <form name="uploadForm" enctype="multipart/form-data" onsubmit="return uploadRequest()" method="post">
             <input type="file" name="file"><br><br>
             Titel: <input type="text" name="title"><br><br>
             Fach:  <select name="faecher">
-                  <option value="deutsch">Deutsch</option>
-                <option value="mathe">Mathe</option>
+                  <option value="1">Deutsch</option>
+                    <option value="2">Mathe</option>
+                    <option value="3">Englisch</option>
             </select> 
             <br><br>
             Lehrer: <input type="text" name="lehrer"><br><br>
-            Typ: <input type="radio" name="type" value="hausaufgaben">Hausaufgaben<br>
-            <input type="radio" name="type" value="notizen">Notizen und Aufschriebe<br><br>
+            Typ: <input type="radio" name="type" value="homework">Hausaufgaben<br>
+            <input type="radio" name="type" value="note">Notizen und Aufschriebe<br><br>
             Notizen:  <br><textarea name="notizen" rows="5" cols="30">
             </textarea> <br><br>
             
