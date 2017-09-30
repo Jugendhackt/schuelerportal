@@ -40,8 +40,10 @@ function suchRequest(){
 }
 
 function suchResponse(json){
-    suchAnzeige(json);
+    localStorage.setItem("suchErgebnisse", JSON.stringify(json));
+    window.location = "suchergebnisse.html";
 }
+
 function fillOutFilter(){
     userInfo = JSON.parse(localStorage.getItem('userInfo'));
     lastSuchRequest = JSON.parse(localStorage.getItem('lastSearch'));
