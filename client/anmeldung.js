@@ -41,3 +41,10 @@ function anmeldungResponse(responseJson){
         window.location = window.location.hostname + "/account.html";
     }
 }
+
+function checkAngemeldet(){
+    var userInfo = JSON.parse(localStorage.getItem('userInfo')); 
+    if(userInfo != undefined){
+        
+    }
+}

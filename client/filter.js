@@ -4,9 +4,12 @@ function suchRequestSimple(){
     
     suchRequest.keywords = document.forms["suchFeldOben"]["suchText"].value.split(',');
     userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if(userInfo != "undefined"){
-        suchRequest.class = userInfo.class;
+    console.log("userInfo:", userInfo);
+    if(userInfo != undefined){
+        suchRequest.class = userInfo.className;
     }
+    
+    console.log(suchRequest);
     
     //Daten senden
     fetch(url, {
