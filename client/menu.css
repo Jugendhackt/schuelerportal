@@ -40,7 +40,8 @@ ul.topnav li a {
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-}.search-input {
+}
+.search-input {
     display: inline-block;
     font-weight: 400;
     line-height: 1.25;

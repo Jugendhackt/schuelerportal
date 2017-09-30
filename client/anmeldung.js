@@ -42,14 +42,31 @@ function anmeldungResponse(responseJson){
     }
 }
 
+function isAngemeldet(){
+    var userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if(userInfo == undefined){
+        document.getElementById('abmelden').style.display = "hidden";
+        return false;
+        
+    } else {
+        return true;
+    }
+}
 function checkAngemeldet(){
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    console.log(userInfo);
     console.log("Checking angemeldet");
-    if(userInfo != undefined){
+    if(isAngemeldet()){
         window.location = "anmeldung.html";
         return false;
     }else {
         return true;
     }
     
+}
+
+function abmelden(){
+    localStorage.removeItem('userInfo');
+    console.log("abgemeldet");
+    document.getElementById('abmelden').style.display = "hidden";
 }

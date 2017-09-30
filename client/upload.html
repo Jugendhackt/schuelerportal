@@ -26,6 +26,9 @@
       <li><a href="faecher.html">Fächer</a></li>
       <li><a href="download.html">Download</a></li>
       <li><a href="#none">Hier kommt noch ein Chat hin</a></li>
+        <li class="right">
+                <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+            </li>
       <li class="right"><form class="" action="index.html" method="post">
         <input type="search" class="search-input" name="" value=""><button type="button" class="search" name="button">Suchen</button>
       </form></li>
@@ -43,11 +46,13 @@
             </select> 
             <br><br>
             Lehrer: <input type="text" name="lehrer"><br><br>
-            Typ: <input type="radio" name="type" value="homework">Hausaufgaben<br>
-            <input type="radio" name="type" value="note">Notizen und Aufschriebe<br><br>
+            Typ: <div style="display:span"><input type="radio" name="type" value="homework">Hausaufgaben<br>
+            <input type="radio" name="type" value="note">Notizen und Aufschriebe<br><br></div>
+            Keywords: <input type="text" name="keywords"><br><br>
+            
             Notizen:  <br><textarea name="notizen" rows="5" cols="30">
             </textarea> <br><br>
-            
+            <p id="errMsg"></p>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hochladen</button>
             
           </form>
