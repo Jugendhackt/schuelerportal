@@ -29,9 +29,10 @@ router.post('/login', (req, res) => {
             throw new Error('User does not exist');
         }
     }).then(() => {
-        return UserUtil.getByUsername(username);
-    }).then(() => {
-        return
+        return User.getByUsername(username);
+    }).then(user => {
+        res.json(user);
+        res.end();
     })
     .catch(err => {
         res.json({

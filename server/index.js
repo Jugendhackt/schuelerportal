@@ -1,6 +1,7 @@
 const app = require('express')();
 const bodyParser = require('body-parser');
 const UserRoute = require('./routes/user');
+const SubjectRoute = require('./routes/subject');
 
 // use json everywhere
 app.use((req, res, next) => {
@@ -23,4 +24,6 @@ app.all('/', (req, res) => {
 });
 
 app.use('/user', UserRoute);
+app.use('/subjects', SubjectRoute);
+
 app.listen(3000, () => console.log('Server is listening'));
