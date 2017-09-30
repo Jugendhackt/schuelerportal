@@ -3,7 +3,7 @@ const Fork = require('child_process');
 /** @param {string} filename */
 function readTextFromFile(filename) {
     return new Promise((resolve, reject) => {
-        Fork.execFile('python', ["python/ocr.py", [filename], {
+        Fork.execFile('python', ["python/ocr.py", filename], {
             env: {
                 PYTHONIOENCODING: 'utf-8'
             }
@@ -12,7 +12,7 @@ function readTextFromFile(filename) {
 
             resolve(stdout);
         });
-    })
+    });
 }
 
 module.exports = readTextFromFile;
