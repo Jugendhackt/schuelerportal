@@ -7,6 +7,8 @@ class User {
     static exists(username) {
         return new Promise((res, rej) => {
             DB.getConnection((err, con) => {
+                if(err) throw err;
+
                 var sql = 'SELECT COUNT(username) count ' +
                           'FROM users ' +
                           'WHERE username = ?';

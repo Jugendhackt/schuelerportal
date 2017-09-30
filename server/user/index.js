@@ -29,7 +29,7 @@ class User {
                     if(err) throw err;
                     con.release();
 
-                    if(results.count !== 0) {
+                    if(results.length > 0) {
                         res(new User(results[0]));
                         return;
                     }
@@ -42,3 +42,5 @@ class User {
 }
 
 module.exports = User;
+
+// User.getUserByUsername('jens1o').then(user=> console.log(user));
