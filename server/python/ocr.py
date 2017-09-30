@@ -9,4 +9,4 @@ import pytesseract
 
 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-print pytesseract.image_to_string(Image.open(bild))
+print pytesseract.image_to_string(Image.open(bild),lang='deu')
