@@ -5,12 +5,13 @@ function uploadRequest(){
     userInfo = JSON.parse(localStorage.getItem('userInfo'));
     
     uploadObj.title = document.forms["uploadForm"]["title"].value;
-    uploadObj.subject = document.forms["uploadForm"]["faecher"].value;
+    uploadObj.subjectID = document.forms["uploadForm"]["faecher"].value;
     uploadObj.teacher = document.forms["uploadForm"]["lehrer"].value;
     uploadObj.type = document.forms["uploadForm"]["type"].value;
     uploadObj.notes = document.forms["uploadForm"]["notizen"].value;
     uploadObj.class = userInfo.className;
     uploadObj.userID = userInfo.userID;
+    uploadObj.keywords = document.forms["uploadForm"]["keywords"].value;
     
     
     var reader = new FileReader();
@@ -45,5 +46,9 @@ function uploadRequest(){
 }
 
 function uploadResponse(response){
-    
+    if(response.err){
+        document.getElementById('errMsg').innerHTML = "Fehler beim Hochladen";
+    } else {
+        document.getElementById('errMsg').innerHTML = "Hochladen erfolgreich";
+    }
 }
