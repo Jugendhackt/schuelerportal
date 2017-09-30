@@ -5,7 +5,7 @@ function anmeldungSenden() {
     obj.username = document.forms["anmeldungForm"]["username"].value;
     obj.password = document.forms["anmeldungForm"]["passwort"].value;
     console.log(obj.username);
-    console.log(obj.passwort);
+    console.log(obj.password);
     console.log(obj);
     
     var jsonObj = JSON.stringify(obj);
