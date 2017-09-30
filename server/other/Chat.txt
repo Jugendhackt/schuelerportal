@@ -1,10 +1,7 @@
-Anton: hallo
 Anton: Hallo
-Julia: Hallo
-Lena: Hallihallo :)
-Julia: Hello
-Lena: it's me
-Julia: a was wondering 
-Lena: if after all these years you'd like to meet
 Anton: Hi
-Julia: hi
+Anton: Hi
+Lena: Hallöchen
+Anton: Hallo
+Julia: Wge
+Lena: Ganz gut und dir so?
