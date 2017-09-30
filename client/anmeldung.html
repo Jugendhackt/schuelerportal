@@ -16,9 +16,10 @@
 
         <!--Custom CSS-->
         <link href="menu.css" rel="stylesheet">
-        
+
         <!--Include JavaScript-->
-        <script src="anmeldung.js"></script>
+        <script type="text/javascript" src="faecher.js"></script>
+          <script src="anmeldung.js"></script>
     </head>
 
     <body>
@@ -29,9 +30,8 @@
             <li><a href="faecher.html">Fächer</a></li>
             <li><a href="download.html">Download</a></li>
             <li><a href="chat.html">Chatten</a></li>
-            <!--<li class="right">
+            <li class="right">
                 <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
-            </li>-->
             <li class="right">
                 <form class="" action="suchergebnisse.html" method="post">
                     <input type="search" name="search"  class="search-input" value="">
@@ -39,7 +39,7 @@
                 </form>
             </li>
         </ul>
-    
+
         <div class="container">
             <h1>Anmeldung</h1>
             <form name="anmeldungForm" onsubmit="return anmeldungSenden()" method="post">
@@ -54,4 +54,5 @@
             </form>
         </div>
     </body>
+        <script>isAngemeldet()</script>
 </html>
