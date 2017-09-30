@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="menu.css" rel="stylesheet">
+      <script src="filter.js"></script>
   </head>
 
   <body>
@@ -24,8 +25,9 @@
       <li><a href="faecher.html">Fächer</a></li>
       <li><a href="download.html">Download</a></li>
       <li><a href="#none">Hier kommt noch ein Chat hin</a></li>
-      <li class="right"><form class="" action="suchergebnisse.html" method="post">
-        <input type="search"  class="search-input" name="" value=""><button type="button" class="search" name="button">Suchen</button>
+      <li class="right">
+        <form class="" onsubmit="return suchRequestSimple()" method="post" name="suchFeldOben">
+            <input type="search"  class="search-input" name="suchText" value=""><button type="button" class="search" name="button" type="submit">Suchen</button>
       </form></li>
     </ul>
       
@@ -33,13 +35,14 @@
 
         <div id="filter">
             <h1>Filter</h1>
-            <form name="suchFilter" onsubmit="suchRequest">
+            <form name="suchFilter" onsubmit="return suchRequestSimple()">
                 Schlagwörter: <input type="text" name="suchText"><br>
                 Klasse: <input type="number" name="class" min="1" max="13">
                 Fach:  <select name="faecher">
                       <option value="fach1">Fach1</option>
                 </select> 
                 <br>
+                User: <input type="text" name="user"><br>
                 Lehrer: <input type="text" name="lehrer"><br>
                 Datum: <input type="date" name="datum"><br>
                 Typ: <input type="checkbox" name="type1" value="hausaufgaben">Hausaufgaben<br>

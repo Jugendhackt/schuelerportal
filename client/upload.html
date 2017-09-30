@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>2cuhl4skül</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -28,19 +28,26 @@
         <input type="search" class="search-input" name="" value=""><button type="button" class="search" name="button">Suchen</button>
       </form></li>
     </ul>
-</br>
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Mein Account</h1>
-        <p class="lead"></p>
-	<a href="#">Profil bearbeiten</a>
-	<p>
-	<a href="#">Meine Hausaufgaben</a>
-	</p>
-          <p>
-          <a href="#">Hausaufgaben hochladen</a>
-          </p>
+    
+      <div class="container">
+        <h1>Aufschriebe hochladen</h1>
+        <form name="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file"><br><br>
+            Titel: <input type="text" name="title"><br><br>
+            Fach:  <select name="faecher">
+                  <option value="deutsch">Deutsch</option>
+                <option value="mathe">Mathe</option>
+            </select> 
+            <br><br>
+            Lehrer: <input type="text" name="lehrer"><br><br>
+            Typ: <input type="radio" name="type" value="hausaufgaben">Hausaufgaben<br>
+            <input type="radio" name="type" value="notizen">Notizen und Aufschriebe<br><br>
+            Notizen:  <br><textarea name="notizen" rows="5" cols="30">
+            </textarea> <br><br>
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hochladen</button>
+            
+          </form>
       </div>
-
-    </div><!-- /.container -->
+    </body>
+</html>
