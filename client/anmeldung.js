@@ -32,19 +32,24 @@ function anmeldungSenden() {
 
 //Response verarbeiten
 function anmeldungResponse(responseJson){
-    if(responseJson.userID==""){
-        document.getElementById('errMsg').innerHTML = "Ungueltige Anmeldung";
+    if(responseJson.err){
+        document.getElementById('errMsg').innerHTML = "Anmeldung fehlgeschlagen";
         console.log("Anmeldung fehlgeschlagen");
     } else {
         localStorage.setItem("userInfo", JSON.stringify(responseJson));
         console.log("Anmeldung erfolgreich");
-        window.location = window.location.hostname + "/account.html";
+        window.location = "account.html";
     }
 }
 
 function checkAngemeldet(){
-    var userInfo = JSON.parse(localStorage.getItem('userInfo')); 
+    var userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    console.log("Checking angemeldet");
     if(userInfo != undefined){
-        
+        window.location = "anmeldung.html";
+        return false;
+    }else {
+        return true;
     }
+    
 }
