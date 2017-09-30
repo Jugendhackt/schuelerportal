@@ -1,12 +1,29 @@
 import sys
 bild = sys.argv[1:]
 bild = ''.join(bild)
-try:
-    import Image
-except ImportError:
-    from PIL import Image
+mode = "picture"
 import pytesseract
+if ".pdf" in bild:
+    mode = "pdf"
+if mode == "picture":
+    try:
+        import Image
+    except ImportError:
+        from PIL import Image
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+    output = pytesseract.image_to_string(Image.open(bild),lang='deu')
+elif mode == "pdf":
+    from wand.image import Image
+    from wand.color import Color
 
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+    with Image(filename=bild, resolution=300) as img:
+      with Image(width=img.width, height=img.height, background=Color("white")) as bg:
+        bg.composite(img,0,0)
+        bg.save(filename="image.png")
+    try:
+        import Image
+    except ImportError:
+        from PIL import Image
+    output = pytesseract.image_to_string(Image.open("image.png"),lang='deu')
 
-print pytesseract.image_to_string(Image.open(bild),lang='deu')
+print output
