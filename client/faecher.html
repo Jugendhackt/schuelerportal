@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="menu.css" rel="stylesheet">
+    <script type="text/javascript" src="faecher.js"></script>
+      <script src="anmeldung.js"></script>
+  </head>
+
+  <body onload="faecherLoad()">
+
+    <ul class="topnav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="account.html">Mein Account</a></li>
+      <li><a class="active" href="faecher.html">Fächer</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="chat.html">Chatten</a></li>
+        <li class="right">
+                <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+            </li>
+      <li class="right"><form class="" action="suchergebnisse.html" method="post">
+        <input type="search" name="search"  class="search-input" value=""><button type="button" class="search" >Suchen</button>
+      </form></li>
+    </ul>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Fächer</h1>
+        <ul id="faecherliste">
+            <li>Hier die Faecher</li>
+        </ul>
+        <p class="lead"></p>
+      </div>
+
+    </div><!-- /.container -->
+    </body>
+</html>

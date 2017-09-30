@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>2cuhl4skül</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="menu.css" rel="stylesheet">
+      <script src="upload.js"></script>
+  </head>
+    <script src="anmeldung.js"></script>
+      <script>checkAngemeldet();</script>
+  <body>
+
+    <ul class="topnav">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="account.html">Mein Account</a></li>
+      <li><a href="faecher.html">Fächer</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="#none">Hier kommt noch ein Chat hin</a></li>
+        <li class="right">
+                <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+            </li>
+      <li class="right"><form class="" action="index.html" method="post">
+        <input type="search" class="search-input" name="" value=""><button type="button" class="search" name="button">Suchen</button>
+      </form></li>
+    </ul>
+    
+      <div class="container">
+        <h1>Aufschriebe hochladen</h1>
+        <form name="uploadForm" enctype="multipart/form-data" onsubmit="return uploadRequest()" method="post">
+            <input type="file" name="datei"><br><br>
+            Titel: <input type="text" name="title"><br><br>
+            Fach:  <select name="faecher">
+                  <option value="1">Deutsch</option>
+                    <option value="2">Mathe</option>
+                    <option value="3">Englisch</option>
+            </select> 
+            <br><br>
+            Lehrer: <input type="text" name="lehrer"><br><br>
+            Typ: <div style="display:span"><input type="radio" name="type" value="homework">Hausaufgaben<br>
+            <input type="radio" name="type" value="note">Notizen und Aufschriebe<br><br></div>
+            Keywords: <input type="text" name="keywords"><br><br>
+            
+            Notizen:  <br><textarea name="notizen" rows="5" cols="30">
+            </textarea> <br><br>
+            <p id="errMsg"></p>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hochladen</button>
+            
+          </form>
+      </div>
+    </body>
+</html>

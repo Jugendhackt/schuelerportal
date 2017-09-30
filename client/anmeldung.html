@@ -1,16 +1,55 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <script src="anmeldung.js"></script>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
+
+        <title>2cuhl4skuel</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+        <!--Custom CSS-->
+        <link href="menu.css" rel="stylesheet">
+
+        <!--Include JavaScript-->
+        <script src="anmeldung.js"></script>
     </head>
+
     <body>
-        <div id="anmeldung">
-            <form name="anmeldungForm" onsubmit="return anmeldungSenden()" method="post">
-                Username: <input type="text" name="username"><br>
-                Passwort: <input type="text" name="passwort">
-                <input type="submit" value="Submit">
+
+        <ul class="topnav">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="account.html">Mein Account</a></li>
+            <li><a href="faecher.html">Fächer</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="chat.html">Chatten</a></li>
+            <li class="right">
+                <form class="" action="suchergebnisse.html" method="post">
+                    <input type="search" name="search"  class="search-input" value="">
+                    <button type="button" class="search" >Suchen</button>
+                </form>
+            </li>
+        </ul>
+
+        <div class="container">
+          <h1>Anmeldung</h1>
+          <form name="anmeldungForm" onsubmit="return anmeldungSenden()" method="post">
+                <label>Username:</label>
+                <input type="text" name="username"> <br>
+
+                <label>Passwort:</label>
+                <input type="password" name="passwort"><br>
+
+                <button class="btn" type="submit">Login</button>
+                <p id="errMsg"></p>
             </form>
         </div>
+
     </body>
 </html>

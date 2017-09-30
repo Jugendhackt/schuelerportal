@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="menu.css" rel="stylesheet">
+    
+      <script src="anmeldung.js"></script>
+  </head>
+
+  <body>
+
+    <ul class="topnav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="account.html">Mein Account</a></li>
+      <li><a href="faecher.html">Fächer</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="chat.html">Chatten</a></li>
+        <li class="right">
+                <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+            </li>
+      <li class="right">
+    <form class="" onsubmit="return suchRequestSimple()" name="suchFeldOben">
+            <input type="search"  class="search-input" name="suchText" value=""><button type="submit" class="search" name="button">Suchen</button>
+      </form></li>
+    </ul>
+
+    <div class="container">
+
+        <div id="filter">
+            <h1>Filter</h1>
+            <form name="suchFilter" onsubmit="return suchRequestSimple()">
+                Schlagwörter: <input type="text" name="suchText"><br>
+                Klasse: <input type="number" name="class" min="1" max="13">
+                Fach:  <select name="faecher">
+                      <option value="1">Deutsch</option>
+                        <option value="2">Mathe</option>
+                        <option value="3">Englisch</option>
+                </select>
+                <br>
+                User: <input type="text" name="user"><br>
+                Lehrer: <input type="text" name="lehrer"><br>
+                Datum: <input type="date" name="datum"><br>
+                Typ: <input type="checkbox" name="type1" value="hausaufgaben">Hausaufgaben<br>
+                <input type="checkbox" name="type2" value="notizen">Notizen und Aufschriebe<br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suchen</button>
+            </form>
+        </div>
+      <div class="starter-template col text-left" id="ergebnisse">
+        <h1>Ergebnisse</h1>
+        <h3><a href="#">Titel</a></h3>
+        <p>Schulklasse</p>
+        <p>Typ</p>
+        <p>Beispielbild</p>
+        <p>Text</p>
+        <hr>
+        <h3><a href="#">Titel</a></h3>
+        <p>Schulklasse</p>
+        <p>Typ</p>
+        <p>Beispielbild</p>
+        <p>Text</p>
+
+
+      </div>
+
+    </div><!-- /.container -->
+      <script src="filter.js"></script>
+      <script>fillOutFilter();</script>
+    </body>
+</html>
