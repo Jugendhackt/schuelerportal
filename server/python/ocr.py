@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 bild = sys.argv[1:]
 bild = ''.join(bild)
@@ -10,7 +11,7 @@ if mode == "picture":
         import Image
     except ImportError:
         from PIL import Image
-    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
     output = pytesseract.image_to_string(Image.open(bild),lang='deu')
 elif mode == "pdf":
     from wand.image import Image
