@@ -1,6 +1,6 @@
 var $star_rating = $('.star-rating .fa');
 
-var SetRatingStar = func{color: tion() {
+var SetRatingStar = function() {
   return $star_rating.each(function() {
     if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
       return $(this).removeClass('fa-star-o').addClass('fa-star');
