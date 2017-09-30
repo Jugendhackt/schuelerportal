@@ -29,7 +29,7 @@ function suchRequestSimple(){
     
     localStorage.setItem("lastSearch", JSON.stringify(suchRequest));
     
-    window.location = "suchergebnisse.html";
+    //window.location = "suchergebnisse.html";
     return false;
 }
 
