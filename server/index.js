@@ -3,9 +3,10 @@ const bodyParser = require('body-parser');
 const UserRoute = require('./routes/user');
 const SubjectRoute = require('./routes/subject');
 const UploadRoute = require('./routes/upload');
+const SearchRoute = require('./search/index');
 const uploader = require('express-fileupload');
 
-// use json everyw  here
+// use json everywhere
 app.use((req, res, next) => {
     res
         .header('Access-Control-Allow-Origin', '*')
@@ -37,5 +38,6 @@ app.all('/', (req, res) => {
 app.use('/user', UserRoute);
 app.use('/subjects', SubjectRoute);
 app.use('/upload', UploadRoute);
+app.use('/search', SearchRoute);
 
 app.listen(3000, () => console.log('Server is listening'));
