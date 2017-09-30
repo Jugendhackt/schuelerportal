@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
                 subjects: results
             });
             res.end();
+            con.release();
         });
     })
 });

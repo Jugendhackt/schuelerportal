@@ -41,3 +41,9 @@ app.use('/upload', UploadRoute);
 app.use('/search', SearchRoute);
 
 app.listen(3000, () => console.log('Server is listening'));
+
+process.on('unhandledRejection', () => {
+    console.log('===================================');
+    console.log(arguments);
+    console.log('===================================');
+})

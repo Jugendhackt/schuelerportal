@@ -72,6 +72,7 @@ Router.post('/', (req, res) => {
                     if(err) throw err;
                     // do not worry about anything else
                     console.log('Saved data!');
+                    con.release();
                 });
             });
         });

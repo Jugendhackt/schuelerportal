@@ -37,22 +37,33 @@ Router.post('/', (req, res) => {
             const userIDs = new Set;
             results.forEach(result => {
                 userIDs.add(result.userID);
+                result.text = result.text.substring(0, 25);
             });
 
-            let sql = 'SELECT username, userID FROM users WHERE userID IN (?)';
+            if(userIDs.size) {
+                let sql = 'SELECT username, userID FROM users WHERE userID IN (?)';
 
-            con.query(sql, Array.from(userIDs), (err, usernames, fields) => {
-                if(err) throw err;
-                const savedIDs = new Map;
+                con.query(sql, Array.from(userIDs), (err, usernames, fields) => {
+                    if(err) throw err;
+                    const savedIDs = new Map;
 
-                for(const username of usernames) {
-                    savedIDs.set(username.userID, username.username);
-                }
+                    for(const usernameEntry of usernames) {
+                        savedIDs.set(usernameEntry.userID, usernameEntry.username);
+                    }
 
-                for(const result of results) {
-                    result.username = savedIDs.get(result.userID);
-                }
+                    for(const result of results) {
+                        result.userName = savedIDs.get(result.userID);
+                    }
 
+                    con.release();
+                    res.json({
+                        success: true,
+                        error: false,
+                        items: results
+                    });
+                    res.end();
+                });
+            } else {
                 con.release();
                 res.json({
                     success: true,
@@ -60,7 +71,7 @@ Router.post('/', (req, res) => {
                     items: results
                 });
                 res.end();
-            });
+            }
 
         });
     })
