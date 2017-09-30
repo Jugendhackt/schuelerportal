@@ -13,6 +13,7 @@
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="menu.css" rel="stylesheet">
     <script type="text/javascript" src="faecher.js"></script>
+      <script src="anmeldung.js"></script>
   </head>
 
   <body onload="faecherLoad()">
@@ -23,6 +24,9 @@
       <li><a class="active" href="faecher.html">Fächer</a></li>
       <li><a href="download.html">Download</a></li>
       <li><a href="chat.html">Chatten</a></li>
+        <li class="right">
+                <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
+            </li>
       <li class="right"><form class="" action="suchergebnisse.html" method="post">
         <input type="search" name="search"  class="search-input" value=""><button type="button" class="search" >Suchen</button>
       </form></li>
