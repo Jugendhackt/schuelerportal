@@ -43,11 +43,6 @@ router.post('/login', (req, res) => {
         res.end();
         return;
     });
-
-
-    // db.getConnection((err, con) => {
-
-    // });
 });
 
 module.exports = router;
