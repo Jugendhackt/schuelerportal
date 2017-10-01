@@ -23,24 +23,16 @@ function refreshDiv(){
 
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "../cgi/chatoutput.py?"+Date.now() );
+    oReq.open("GET", "http://localhost:8080/cgi/chatoutput.py?"+Date.now() );
     oReq.send();
 }
 
 
 
 //Chat Senden
-
-function sendchat() {
-  sendinput = document.getElementById('sendinput');
+function chatsenden() {
   var sender = new XMLHttpRequest();
-  sender.open("GET", "../cgi/chat.py?chat="+sendinput);
+  sender.addEventListener("load", reqListener);
+  sender.open("GET", "../cgi/chatoutput.py?"+Date.now() );
   sender.send();
-  document.getElementById('sendinput').value = "";
-}
-
-
-function Senden(form) {
-   alert(form)
-   return false;
 }

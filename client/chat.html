@@ -7,8 +7,9 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
      <script src="filter.js"></script>
-          <script src="anmeldung.js"></script>
+     <script src="anmeldung.js"></script>
           <script src="suchanzeige.js"></script>
+          <script src="JS/chat.js"></script>
 
     <title>Starter Template for Bootstrap</title>
 
@@ -21,9 +22,10 @@
   </head>
 
 <!--  <body onload="menu('menu','Chatten')">
-    <div id="menu">
+    <div id="menu">suchanzeige
 
     </div>-->
+    <body>
     <ul class="topnav">
       <li><a  href="index.html">Home</a></li>
       <li><a href="account.html">Mein Account</a></li>
@@ -42,10 +44,16 @@
 </br>
     <div class="container">
 
-<iframe src="http://192.168.9.90:8080/cgi/index.py" width="400" height="300" allowtransparency="true" frameborder="0"></iframe>
+<!--<iframe src="http://192.168.9.90:8080/cgi/index.py" width="400" height="300" allowtransparency="true" frameborder="0"></iframe>-->
 
-
-
+<div  class="chat" id="chatoutput">
+</div>"
+<form>
+ <input id="chatinput" type="text">
+</input>
+<input id="chatsubmit" type=submit>
+</input>
+</from>
 
 
 
@@ -54,7 +62,7 @@
 
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+    ===========$.post( "test.php", $( "#testform" ).serialize() );======================================= -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
