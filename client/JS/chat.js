@@ -33,7 +33,6 @@ function refreshDiv(){
 function chatsenden() {
   function reqListener () {
   inhalt=document.getElementById("chatoutput").innerHTML
-  document.getElementById("chatoutput").innerHTML=this.responseText;
 
   }
   var sender = new XMLHttpRequest();
