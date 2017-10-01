@@ -15,6 +15,7 @@ function uploadRequest(){
     
     
     var reader = new FileReader();
+    
     reader.onload = function(e) {
         var dataURL = reader.result;
         uploadObj.file = dataURL;
@@ -38,8 +39,7 @@ function uploadRequest(){
 
     reader.readAsDataURL(document.forms["uploadForm"]["datei"].files[0]);
     
-    console.log(uploadObj);
-    
+    console.log(uploadObj);   
     
     return false;
     
