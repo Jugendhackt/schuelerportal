@@ -14,6 +14,7 @@ Router.post('/', (req, res) => {
             errmsg: 'Missing/Invalid fields!'
         });
         res.end();
+        return;
     }
     DB.getConnection((err, con) => {
         if(err) throw err;

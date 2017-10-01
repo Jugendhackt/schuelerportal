@@ -3,7 +3,6 @@ const db = require('../database/db');
 const bcrypt = require('bcrypt');
 const UserUtil = require('../util/user/index');
 const User = require('../user/index');
-const crypto = require('crypto');
 
 router.get('/test', (req, res) => {
     res.end(JSON.stringify({
