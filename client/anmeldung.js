@@ -52,6 +52,7 @@ function isAngemeldet(){
         return true;
     }
 }
+
 function checkAngemeldet(){
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
     console.log("Checking angemeldet");
