@@ -49,9 +49,9 @@ process.on('unhandledRejection', () => {
     console.log('===================================');
     console.log(arguments);
     console.log('===================================');
-})
+});
 process.on('uncaughtException', () => {
     console.log('===================================');
     console.log(arguments);
     console.log('===================================');
-})
+});
