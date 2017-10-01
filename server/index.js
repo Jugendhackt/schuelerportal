@@ -45,13 +45,13 @@ app.use(express.static('uploadedData'));
 
 app.listen(3000, () => console.log('Server is listening'));
 
-process.on('unhandledRejection', () => {
-    console.log('===================================');
-    console.log(arguments);
+process.on('unhandledRejection', event => {
+    console.log('================REJECTION===================');
+    console.log(event.reason);
     console.log('===================================');
 });
-process.on('uncaughtException', () => {
-    console.log('===================================');
-    console.log(arguments);
+process.on('uncaughtException', err => {
+    console.log('================EXCEPTION===================');
+    console.log(err.stack);
     console.log('===================================');
 });

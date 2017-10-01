@@ -18,13 +18,20 @@ Router.post('/', (req, res) => {
     DB.getConnection((err, con) => {
         if(err) throw err;
         const queries = [];
-        const query = "SELECT * FROM documents WHERE text LIKE ? UNION SELECT * FROM documents WHERE keywords LIKE ?";
+        const query = 'SELECT * FROM documents d '+
+                      'JOIN rating r ON d.documentID = r.documentID '+
+                      'WHERE text LIKE ? '+
+                      'UNION '+
+                      'SELECT * FROM documents d '+
+                      'JOIN rating r ON d.documentID = r.documentID '+
+                      'WHERE keywords LIKE ? '+
         keywords.forEach(ele => {
             queries.push(query);
         });
 
         let parameters = [];
         keywords.forEach(el => {
+            el = '%'+el+'%';
             parameters.push(el);
             parameters.push(el);
         })
@@ -37,7 +44,7 @@ Router.post('/', (req, res) => {
             const userIDs = new Set;
             results.forEach(result => {
                 userIDs.add(result.userID);
-                result.text = result.text.substring(0, 25);
+                result.text = result.text.substring(0, 29) + '…';
             });
 
             if(userIDs.size) {
