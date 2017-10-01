@@ -29,6 +29,7 @@ Router.post('/', (req, res) => {
                 error: false
             });
             res.end();
+            con.release();
         });
     });
 
