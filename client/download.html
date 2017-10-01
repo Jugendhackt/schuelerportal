@@ -28,6 +28,8 @@
         <script src="starrating.js"></script>
         <script src="anmeldung.js"></script>
         <script src="documentanzeige.js"></script>
+        <script src="filter.js"></script>
+        
 
     </head>
 
@@ -43,10 +45,10 @@
                 <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
             </li>
             <li class="right">
-                <form class="" action="index.html" method="post">
-                    <input type="search" class="search-input" name="" value="">
-                    <button type="button" class="search" name="button">Suchen</button>
-                </form>
+              <form onsubmit="return suchRequestSimple()" method="post" name="suchFeldOben">
+                  <input type="search"  class="search-input" name="suchText" value="">
+                  <button class="search" name="button" type="submit">Suchen</button>
+              </form>
             </li>
         </ul>
 

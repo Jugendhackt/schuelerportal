@@ -15,9 +15,12 @@
     <!-- Custom styles for this template -->
     <link href="menu.css" rel="stylesheet">
     
+      <!--Include JavaScript-->
       <script src="anmeldung.js"></script>
       <script src="suchanzeige.js"></script>
       <script src="documentanzeige.js"></script>
+      <script src="filter.js"></script>
+      
   </head>
 
   <body>
@@ -31,10 +34,12 @@
         <li class="right">
                 <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
             </li>
-      <li class="right">
-    <form class="" onsubmit="return suchRequestSimple()" name="suchFeldOben">
-            <input type="search"  class="search-input" name="suchText" value=""><button type="submit" class="search" name="button">Suchen</button>
-      </form></li>
+        <li class="right">
+          <form class="" onsubmit="return suchRequestSimple()" name="suchFeldOben">
+              <input type="search"  class="search-input" name="suchText" value="">
+              <button type="submit" class="search" name="button">Suchen</button>
+          </form>
+        </li>
     </ul>
 
     <div class="container">
