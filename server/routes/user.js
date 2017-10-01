@@ -3,6 +3,7 @@ const db = require('../database/db');
 const bcrypt = require('bcrypt');
 const UserUtil = require('../util/user/index');
 const User = require('../user/index');
+const crypto = require('crypto');
 
 router.get('/test', (req, res) => {
     res.end(JSON.stringify({
@@ -24,14 +25,10 @@ router.post('/login', (req, res) => {
         return;
     }
 
-    UserUtil.exists(username).then(result => {
-        if(!result) {
-            res.statusCode = 404;
-            throw new Error('User does not exist');
-        }
-    }).then(() => {
-        return User.getUserByUsername(username);
-    }).then(user => {
+    // TODO: Verify password :D
+
+    User.getUserByUsername(username)
+    .then(user => {
         res.json(user.getJSONDecoration());
         res.end();
         return;
