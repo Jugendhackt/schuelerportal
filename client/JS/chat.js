@@ -41,5 +41,6 @@ function chatsenden() {
   console.log("Test")
   console.log(document.getElementById("chatinput").value )
   sender.open("GET", "http://localhost:8080/cgi/chat.py?chat="+document.getElementById("chatinput").value );
+  document.getElementById("chatinput").value = "";
   sender.send();
 }
