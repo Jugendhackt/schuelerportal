@@ -52,6 +52,7 @@ function isAngemeldet(){
         return true;
     }
 }
+
 function checkAngemeldet(){
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
     console.log("Checking angemeldet");
@@ -67,6 +68,6 @@ function checkAngemeldet(){
 function abmelden(){
     localStorage.removeItem('userInfo');
     console.log("abgemeldet");
-    document.getElementById('abmelden').display.visibility = "hidden";
+    document.getElementById('abmelden').style.visibility = "hidden";
     
 }
