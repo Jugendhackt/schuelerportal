@@ -1,5 +1,5 @@
 function faecherLoad(){
-    var url = "http://192.168.9.129:3000/subjects";
+    var url = myURL + "/subjects";
     var faecherliste;
 
     //Faecherliste anfordern

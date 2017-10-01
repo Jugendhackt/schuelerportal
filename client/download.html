@@ -61,7 +61,23 @@
                         <h2 id="title">Titel</h2>
                     </div>
                     <div class="col">
-                        <button href="Mathe.png" type="button"class="btn btn-primary">Download</button>
+                        <div class="container">
+                           <div class="row">
+                               <div class="col-lg-12">
+                                   <div class="star-rating">
+                                       <span class="fa fa-star-o" data-rating="1"></span>
+                                       <span class="fa fa-star-o" data-rating="2"></span>
+                                       <span class="fa fa-star-o" data-rating="3"></span>
+                                       <span class="fa fa-star-o" data-rating="4"></span>
+                                       <span class="fa fa-star-o" data-rating="5"></span>
+                                       <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button href="Mathe.png" type="button"class="btn btn-primary" id="download-btn">Download</button>
                     </div>
                 </div>
 
@@ -90,7 +106,7 @@
                                     <p class="">Hello this is a test comment.</p> 
                                     <span class="date sub-text">on March 5th, 2014</span>
                                 </div>
-                            </li>
+                            </li><hr>
                             <li>
                                 <div class="commenterImage">
                                     <img src="http://placekitten.com/45/45" />
@@ -100,7 +116,7 @@
                                     <span class="date sub-text">on March 5th, 2014</span>
 
                                 </div>
-                            </li>
+                            </li><hr>
                             <li>
                                 <div class="commenterImage">
                                     <img src="http://placekitten.com/40/40" />
@@ -110,14 +126,14 @@
                                     <span class="date sub-text">on March 5th, 2014</span>
 
                                 </div>
-                            </li>
+                            </li><hr>
                         </ul>
                         <form class="form-inline" role="form">
                             <div class="form-group">
                                 <input class="form-control" type="text" placeholder="Your comments" />
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-default">Add</button>
+                                <button class="btn btn-default" id="add_comment_btn">Add</button>
                             </div>
                         </form>
                     </div>
@@ -132,34 +148,12 @@
                                <span class="fa fa-star-o" data-rating="3"></span>
                                <span class="fa fa-star-o" data-rating="4"></span>
                                <span class="fa fa-star-o" data-rating="5"></span>
-                               <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                               <input type="hidden" name="whatever1" class="rating-value" value="5">
                            </div>
+                           <button class="btn btn-default" id="rate_btn">Rate</button>
                        </div>
                    </div>
-                   <div class="row">
-                       <div class="col-lg-12">
-                           <div class="star-rating">
-                               <span class="fa fa-star-o" data-rating="1"></span>
-                               <span class="fa fa-star-o" data-rating="2"></span>
-                               <span class="fa fa-star-o" data-rating="3"></span>
-                               <span class="fa fa-star-o" data-rating="4"></span>
-                               <span class="fa fa-star-o" data-rating="5"></span>
-                               <input type="hidden" name="whatever2" class="rating-value" value="1.9">
-                           </div>
-                       </div>
-                   </div>
-                   <div class="row">
-                       <div class="col-lg-12">
-                           <div class="star-rating">
-                               <span class="fa fa-star-o" data-rating="1"></span>
-                               <span class="fa fa-star-o" data-rating="2"></span>
-                               <span class="fa fa-star-o" data-rating="3"></span>
-                               <span class="fa fa-star-o" data-rating="4"></span>
-                               <span class="fa fa-star-o" data-rating="5"></span>
-                               <input type="hidden" name="whatever3" class="rating-value" value="4.1">
-                           </div>
-                       </div>
-                   </div>
+                   
                 </div>
             </div>
         </div>

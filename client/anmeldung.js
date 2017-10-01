@@ -1,5 +1,7 @@
+var myURL = "http://192.168.9.129:3000";
+
 function anmeldungSenden() {
-    var ip = "http://192.168.9.129:3000/user/login";
+    var ip = myURL + "/user/login";
     //var ip = "lol";
     var obj = {}
     obj.username = document.forms["anmeldungForm"]["username"].value;
