@@ -1,4 +1,5 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const UserRoute = require('./routes/user');
 const SubjectRoute = require('./routes/subject');
@@ -40,9 +41,16 @@ app.use('/subjects', SubjectRoute);
 app.use('/upload', UploadRoute);
 app.use('/search', SearchRoute);
 
+app.use(express.static('uploadedData'));
+
 app.listen(3000, () => console.log('Server is listening'));
 
 process.on('unhandledRejection', () => {
+    console.log('===================================');
+    console.log(arguments);
+    console.log('===================================');
+})
+process.on('uncaughtException', () => {
     console.log('===================================');
     console.log(arguments);
     console.log('===================================');
