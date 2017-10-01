@@ -58,3 +58,5 @@ typings/
 .env
 
 uploadedData/
+
+Chat.txt
