@@ -22,6 +22,8 @@
         <script src="starrating.js"></script>
         <script src="anmeldung.js"></script>
         <script src="documentanzeige.js"></script>
+        <script src="filter.js"></script>
+
 
   </head>
 
@@ -48,10 +50,10 @@
                 <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
             </li>
             <li class="right">
-                <form class="" action="index.html" method="post">
-                    <input type="search" class="search-input" name="" value="">
-                    <button type="button" class="search" name="button">Suchen</button>
-                </form>
+              <form onsubmit="return suchRequestSimple()" method="post" name="suchFeldOben">
+                  <input type="search"  class="search-input" name="suchText" value="">
+                  <button class="search" name="button" type="submit">Suchen</button>
+              </form>
             </li>
         </ul>
 
@@ -61,25 +63,27 @@
                 <h1></h1>
                 <div class="row">
                     <div class="col">
-                        <p class="lead" id="title">Titel</p>
+                        <h2 id="title">Titel</h2>
                     </div>
                     <div class="col">
                         <button href="Mathe.png" type="button"class="btn btn-primary">Download</button>
                     </div>
                 </div>
 
-                <p>Metadate</p>
+                <div id="docmetadata">Metadate</div>
+
+                <div id="image"></div>
 
                 <p id="text">Ganz viel Text</p>
 
-                <p id="image"></p>
+                <!--Kommentare-->
                 <div class="detailBox">
                     <div class="titleBox">
-                    <label>Comment Box</label>
+                    <h3>Kommentare</h3>
                     <button type="button" class="close" aria-hidden="true">&times;</button>
                     </div>
                     <div class="commentBox">
-                            <p class="taskDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <p class="taskDescription"></p>
                     </div>
                     <div class="actionBox">
                         <ul class="commentList">

@@ -23,7 +23,9 @@ if ip == "192.168.9.177":
 if ip == "192.168.9.147":
 	username = "Lena"
 if ip == "192.168.9.134":
-	username = "Julia"
+	username = "Julia"dataType
+print "Access-Control-Allow-Origin:*"
+print "Access-Control-Allow-Methods:*"
 print "Content-type:text/html\r\n\r\n"
 print "<html xmlns=\"http://www.w3.org/TR/html5/\">"
 print "<head>"

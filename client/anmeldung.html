@@ -19,7 +19,9 @@
 
         <!--Include JavaScript-->
         <script type="text/javascript" src="faecher.js"></script>
-          <script src="anmeldung.js"></script>
+        <script src="anmeldung.js"></script>
+        <script src="filter.js"></script>
+        
     </head>
 
     <body>
@@ -33,9 +35,9 @@
             <li class="right">
                 <button class="search" onclick="return abmelden()" id="abmelden">Abmelden</button>
             <li class="right">
-                <form class="" action="suchergebnisse.html" method="post">
-                    <input type="search" name="search"  class="search-input" value="">
-                    <button type="button" class="search" >Suchen</button>
+                <form onsubmit="return suchRequestSimple()" method="post" name="suchFeldOben">
+                    <input type="search"  class="search-input" name="suchText" value="">
+                    <button class="search" name="button" type="submit">Suchen</button>
                 </form>
             </li>
         </ul>
@@ -54,5 +56,4 @@
             </form>
         </div>
     </body>
-        <script>isAngemeldet()</script>
 </html>
