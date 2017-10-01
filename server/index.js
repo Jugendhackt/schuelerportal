@@ -5,7 +5,6 @@ const UserRoute = require('./routes/user');
 const SubjectRoute = require('./routes/subject');
 const UploadRoute = require('./routes/upload');
 const SearchRoute = require('./search/index');
-const uploader = require('express-fileupload');
 
 // use json everywhere
 app.use((req, res, next) => {
@@ -21,11 +20,6 @@ app.use(bodyParser.json({
 }));
 app.use(bodyParser.urlencoded({
     extended: false
-}));
-app.use(uploader({
-    limits: {
-        fileSize: 5 * 1024 * 1024
-    }
 }));
 
 app.all('/', (req, res) => {

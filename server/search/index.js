@@ -24,7 +24,7 @@ Router.post('/', (req, res) => {
                       'UNION '+
                       'SELECT * FROM documents d '+
                       'JOIN rating r ON d.documentID = r.documentID '+
-                      'WHERE keywords LIKE ? '+
+                      'WHERE keywords LIKE ? ';
         keywords.forEach(ele => {
             queries.push(query);
         });
@@ -35,7 +35,6 @@ Router.post('/', (req, res) => {
             parameters.push(el);
             parameters.push(el);
         })
-
 
 
         con.query(queries.join(' UNION '), parameters, (err, results, fields) => {
