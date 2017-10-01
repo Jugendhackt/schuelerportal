@@ -11,7 +11,7 @@ if (typeof XMLHttpRequest === "undefined") {
 
 // Chat Verlauf
 var counter = 0;
-//window.setInterval("refreshDiv()", 1500);
+window.setInterval("refreshDiv()", 1500);
 
 function refreshDiv(){
     counter = counter + 1;
@@ -23,20 +23,16 @@ function refreshDiv(){
 
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "../cgi/chatoutput.py?"+Date.now() );
+    oReq.open("GET", "http://localhost:8080/cgi/chatoutput.py?"+Date.now() );
     oReq.send();
 }
 
 
 
 //Chat Senden
-$(document).ready(function() {
-  $( "#chatsubmit" ).on("submit", function( event ) {
-    event.preventDefault();
-    sendinput = document.getElementById('chatinput');
-    console.log("Test");
-    $.post( "192.168.9.90/cgi/c<!--hat.py", { chat: sendinput } );
-    sendinput.value = "";
-    return false;
-  });
-});
+function chatsenden() {
+  var sender = new XMLHttpRequest();
+  sender.addEventListener("load", reqListener);
+  sender.open("GET", "../cgi/chatoutput.py?"+Date.now() );
+  sender.send();
+}
