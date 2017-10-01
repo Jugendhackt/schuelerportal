@@ -31,8 +31,15 @@ function refreshDiv(){
 
 //Chat Senden
 function chatsenden() {
+  function reqListener () {
+  inhalt=document.getElementById("chatoutput").innerHTML
+  document.getElementById("chatoutput").innerHTML=this.responseText;
+
+  }
   var sender = new XMLHttpRequest();
   sender.addEventListener("load", reqListener);
-  sender.open("GET", "../cgi/chatoutput.py?"+Date.now() );
+  console.log("Test")
+  console.log(document.getElementById("chatinput").value )
+  sender.open("GET", "http://localhost:8080/cgi/chat.py?chat="+document.getElementById("chatinput").value );
   sender.send();
 }

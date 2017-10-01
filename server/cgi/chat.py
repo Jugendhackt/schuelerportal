@@ -23,7 +23,7 @@ if ip == "192.168.9.177":
 if ip == "192.168.9.147":
 	username = "Lena"
 if ip == "192.168.9.134":
-	username = "Julia"dataType
+	username = "Julia"
 print "Access-Control-Allow-Origin:*"
 print "Access-Control-Allow-Methods:*"
 print "Content-type:text/html\r\n\r\n"
