@@ -1,5 +1,5 @@
 function uploadRequest(){
-    var url="http://192.168.9.129:3000/upload"
+    var url=myURL+ "/upload"
     var uploadObj = {};
     
     userInfo = JSON.parse(localStorage.getItem('userInfo'));

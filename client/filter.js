@@ -1,5 +1,5 @@
 function suchRequestSimple(){
-    var url = "http://192.168.9.129:3000/search";
+    var url = myURL + "/search";
     var suchRequest = {};
     
     suchRequest.keywords = document.forms["suchFeldOben"]["suchText"].value;
