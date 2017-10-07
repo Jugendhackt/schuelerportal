@@ -43,7 +43,7 @@ Router.post('/', (req, res) => {
             const userIDs = new Set;
             results.forEach(result => {
                 userIDs.add(result.userID);
-                result.text = result.text.substring(0, 29) + '…';
+                result.text = result.text.substring(0, 180) + '…';
             });
 
             if(userIDs.size) {

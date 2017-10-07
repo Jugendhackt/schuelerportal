@@ -58,7 +58,8 @@ Router.post('/', (req, res) => {
 
         FileSystem.writeFileSync(filename, data);
 
-        console.log('Reading file...');
+        console.log('Reading file... Saving as', filename);
+
         OCRReader(filename).then(content => {
             const text = content;
             console.log('Successfully read text... Getting db connection');
